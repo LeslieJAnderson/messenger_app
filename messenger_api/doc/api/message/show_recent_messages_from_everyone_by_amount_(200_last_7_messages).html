@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Message API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Message API</h1>
+
+        <p class="explanation">Message endpoints.</p>
+
+      <div class="article">
+        <h2>Show Recent Messages From Everyone By Amount (200: Last 7 Messages)</h2>
+        <h3>GET /message/recent/:num_messages/messages/from/everyone</h3>
+
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /message/recent/7/messages/from/everyone</pre>
+
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/vnd.api+json; charset=utf-8
+ETag: W/&quot;4f56689d308b03327a453be3c3376722&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: ba4cd7bb-0a39-4cda-8045-c31a9c5c054b
+X-Runtime: 0.054654
+Content-Length: 1615</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;2&quot;,
+      &quot;type&quot;: &quot;message&quot;,
+      &quot;attributes&quot;: {
+        &quot;created_at&quot;: &quot;2021-03-18T17:22:03.758Z&quot;,
+        &quot;from_username&quot;: &quot;tina&quot;,
+        &quot;to_username&quot;: &quot;louise&quot;,
+        &quot;content&quot;: &quot;It&#39;s okay for you to be excited, Louise.&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;3&quot;,
+      &quot;type&quot;: &quot;message&quot;,
+      &quot;attributes&quot;: {
+        &quot;created_at&quot;: &quot;2021-03-19T17:22:03.771Z&quot;,
+        &quot;from_username&quot;: &quot;louise&quot;,
+        &quot;to_username&quot;: &quot;tina&quot;,
+        &quot;content&quot;: &quot;Yeah, it&#39;s okay for you to be excited.&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;4&quot;,
+      &quot;type&quot;: &quot;message&quot;,
+      &quot;attributes&quot;: {
+        &quot;created_at&quot;: &quot;2021-03-20T17:22:03.783Z&quot;,
+        &quot;from_username&quot;: &quot;tina&quot;,
+        &quot;to_username&quot;: &quot;louise&quot;,
+        &quot;content&quot;: &quot;Right. Listen, every day at around 2:30, my armpits get sweaty...&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;5&quot;,
+      &quot;type&quot;: &quot;message&quot;,
+      &quot;attributes&quot;: {
+        &quot;created_at&quot;: &quot;2021-03-21T17:22:03.800Z&quot;,
+        &quot;from_username&quot;: &quot;louise&quot;,
+        &quot;to_username&quot;: &quot;tina&quot;,
+        &quot;content&quot;: &quot;Okay.&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;6&quot;,
+      &quot;type&quot;: &quot;message&quot;,
+      &quot;attributes&quot;: {
+        &quot;created_at&quot;: &quot;2021-03-22T17:22:03.815Z&quot;,
+        &quot;from_username&quot;: &quot;tina&quot;,
+        &quot;to_username&quot;: &quot;louise&quot;,
+        &quot;content&quot;: &quot;And I used to hate raising my hand in class to answer a question, but one day, I had to say, who cares? I have swampy armpits and I&#39;m gonna answer all the questions I want. I&#39;m swampy and I&#39;m proud.&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;7&quot;,
+      &quot;type&quot;: &quot;message&quot;,
+      &quot;attributes&quot;: {
+        &quot;created_at&quot;: &quot;2021-03-23T17:22:03.836Z&quot;,
+        &quot;from_username&quot;: &quot;louise&quot;,
+        &quot;to_username&quot;: &quot;tina&quot;,
+        &quot;content&quot;: &quot;Tina, where are you going with this?&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;8&quot;,
+      &quot;type&quot;: &quot;message&quot;,
+      &quot;attributes&quot;: {
+        &quot;created_at&quot;: &quot;2021-03-24T17:22:03.892Z&quot;,
+        &quot;from_username&quot;: &quot;tina&quot;,
+        &quot;to_username&quot;: &quot;louise&quot;,
+        &quot;content&quot;: &quot;I&#39;m saying just because you think something is embarrassing doesn&#39;t mean you have to be embarrassed by it. We all have our swampy pits. My swampy pits is swampy pits. Maybe your swampy pits is Boo Boo.&quot;
+      }
+    }
+  ],
+  &quot;jsonapi&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>
