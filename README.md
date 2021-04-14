@@ -13,6 +13,12 @@ Ruby 2.5.1 is unideal as it's nearing End Of Life, but my current company runs a
 
 ## Useful Commands ##
 
+Install gems from `messenger_api/spec`:
+```
+$ cd messenger_api
+$ bundle
+```
+
 Start rails app:
 
 ```
